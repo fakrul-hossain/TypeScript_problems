@@ -1,21 +1,17 @@
-// Problem 1: formatString
 function formatString(input: string, toUpper: boolean = true): string {
   return toUpper ? input.toUpperCase() : input.toLowerCase();
 }
 
-// Problem 2: filterByRating
 function filterByRating(
   items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
   return items.filter((item) => item.rating >= 4);
 }
 
-// Problem 3: concatenateArrays
 function concatenateArrays<T>(...arrays: T[][]): T[] {
-  return arrays.flat();
+  return ([] as T[]).concat(...arrays);
 }
 
-// Problem 4: Vehicle and Car classes
 class Vehicle {
   private make: string;
   private year: number;
@@ -43,12 +39,10 @@ class Car extends Vehicle {
   }
 }
 
-// Problem 5: processValue
 function processValue(value: string | number): number {
   return typeof value === "string" ? value.length : value * 2;
 }
 
-// Problem 6: getMostExpensiveProduct
 interface Product {
   name: string;
   price: number;
@@ -59,7 +53,6 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
   return products.reduce((max, item) => (item.price > max.price ? item : max));
 }
 
-// Problem 7: Day enum and getDayType
 enum Day {
   Monday,
   Tuesday,
@@ -74,7 +67,6 @@ function getDayType(day: Day): string {
   return day === Day.Saturday || day === Day.Sunday ? "Weekend" : "Weekday";
 }
 
-// Problem 8: squareAsync
 async function squareAsync(n: number): Promise<number> {
   if (n < 0) {
     throw new Error("Negative number not allowed");
